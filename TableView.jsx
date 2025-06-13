@@ -37,6 +37,7 @@ const TableView = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [event, setEvent] = useState(null);
+  const [chicagoTime, setChicagoTime] = useState('');
 
   useEffect(() => {
     fetch('/fpl-site/data.json')
@@ -48,6 +49,15 @@ const TableView = () => {
         }
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    fetch('http://worldtimeapi.org/api/timezone/America/Chicago')
+      .then((res) => res.json())
+      .then((json) => {
+        setChicagoTime(json.datetime ? new Date(json.datetime).toLocaleString('en-US', { timeZone: 'America/Chicago' }) : '');
+      })
+      .catch(() => setChicagoTime('Error fetching time'));
   }, []);
 
   if (loading) return <div>Loading...</div>;
@@ -62,6 +72,7 @@ const TableView = () => {
   return (
     <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, boxSizing: 'border-box', width: '100%', overflowX: 'auto' }}>
       <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 24 }}>Gameweek: {event}</h2>
+      <div style={{ marginBottom: 16, fontSize: 16, color: '#555' }}>Chicago Time: {chicagoTime}</div>
       <div style={{ width: '100%', overflowX: 'auto' }}>
         <table style={tableStyles}>
           <thead>
