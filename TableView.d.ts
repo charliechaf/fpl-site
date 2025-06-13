@@ -1,3 +1,3 @@
 import React from 'react';
-declare const TableView: () => React.JSX.Element;
+declare const TableView: React.FC;
 export default TableView;

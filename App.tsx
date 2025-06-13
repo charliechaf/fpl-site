@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TableView from './TableView';
 import StatsView from './StatsView';
 import './App.css';
