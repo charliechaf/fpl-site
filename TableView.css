@@ -1,0 +1,73 @@
+.tableview-outer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f9;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.tableview-inner {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 8px;
+  box-sizing: border-box;
+}
+
+.tableview-title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tableview-time {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+.tableview-table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.tableview-th {
+  background: #fafafb;
+  color: #222;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+  font-size: 15px;
+}
+
+.tableview-td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  font-size: 15px;
+  color: #444;
+  background: #fff;
+}
+
+.tableview-tr {
+  transition: background 0.2s;
+}
+
+.tableview-tr:hover {
+  background: #f7f7f9;
+}
