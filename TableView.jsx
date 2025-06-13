@@ -52,29 +52,40 @@ const TableView = () => {
 
   if (loading) return <div>Loading...</div>;
 
+  // Sort data by net points descending
+  const sortedData = [...data].sort((a, b) => {
+    const netA = a.entry_history ? a.entry_history.points - a.entry_history.event_transfers_cost : -Infinity;
+    const netB = b.entry_history ? b.entry_history.points - b.entry_history.event_transfers_cost : -Infinity;
+    return netB - netA;
+  });
+
   return (
-    <div style={{ maxWidth: 700, margin: '40px auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, boxSizing: 'border-box', width: '100%', overflowX: 'auto' }}>
       <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 24 }}>Gameweek: {event}</h2>
-      <table style={tableStyles}>
-        <thead>
-          <tr>
-            <th style={thStyles}>points</th>
-            <th style={thStyles}>transfer cost</th>
-            <th style={thStyles}>net points</th>
-            <th style={thStyles}>active chip</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, idx) => (
-            <tr key={idx} style={trHover} onMouseOver={e => e.currentTarget.style.background='#f7f7f9'} onMouseOut={e => e.currentTarget.style.background='#fff'}>
-              <td style={tdStyles}>{row.entry_history?.points}</td>
-              <td style={tdStyles}>{row.entry_history?.event_transfers_cost}</td>
-              <td style={tdStyles}>{row.entry_history ? row.entry_history.points - row.entry_history.event_transfers_cost : ''}</td>
-              <td style={tdStyles}>{row.active_chip || ''}</td>
+      <div style={{ width: '100%', overflowX: 'auto' }}>
+        <table style={tableStyles}>
+          <thead>
+            <tr>
+              <th style={thStyles}>name</th>
+              <th style={thStyles}>points</th>
+              <th style={thStyles}>transfer cost</th>
+              <th style={thStyles}>net points</th>
+              <th style={thStyles}>active chip</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sortedData.map((row, idx) => (
+              <tr key={idx} style={trHover} onMouseOver={e => e.currentTarget.style.background='#f7f7f9'} onMouseOut={e => e.currentTarget.style.background='#fff'}>
+                <td style={tdStyles}>{row.name || ''}</td>
+                <td style={tdStyles}>{row.entry_history?.points}</td>
+                <td style={tdStyles}>{row.entry_history?.event_transfers_cost}</td>
+                <td style={tdStyles}>{row.entry_history ? row.entry_history.points - row.entry_history.event_transfers_cost : ''}</td>
+                <td style={tdStyles}>{row.active_chip || ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
