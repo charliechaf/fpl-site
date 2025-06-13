@@ -66,10 +66,11 @@
   box-sizing: border-box;
   width: 100vw;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .tableview-inner {
-  width: 100vw;
+  width: 90vw;
   max-width: 700px;
   margin: 0 auto;
   padding: 24px 0;
@@ -92,4 +93,39 @@
   min-height: 60vh;
   color: #888;
   font-size: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 56px;
+  max-width: 56px;
+}
+
+.tab-icon {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* Make the stats tab text centered and same width as icon tab */
+.tab-btn:not(:first-child) {
+  min-width: 56px;
+  max-width: 56px;
+  justify-content: center;
 }

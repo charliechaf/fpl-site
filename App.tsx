@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TableView from './TableView';
 import StatsView from './StatsView';
 import './App.css';
-import tableIcon2 from './table-icon-2.png';
+import tableIcon2 from './table-icon.svg';
 
 function App() {
   const [tab, setTab] = useState('table');
@@ -17,7 +17,7 @@ function App() {
           className={tab === 'table' ? 'tab-btn active' : 'tab-btn'}
           onClick={() => setTab('table')}
         >
-          <img src={tableIcon2} alt="Table" style={{ height: 28, verticalAlign: 'middle' }} />
+          <img src={tableIcon2} alt="Table" className="tab-icon" />
         </button>
         <button
           className={tab === 'stats' ? 'tab-btn active' : 'tab-btn'}

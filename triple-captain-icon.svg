@@ -1,0 +1,9 @@
+<svg viewBox="0 0 192 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%">
+  <style>
+    .main { stroke: #202f4e; stroke-width: 8; stroke-linecap: round; font-family: 'Arial Black', Arial, sans-serif; }
+    .three { fill: #4BA3F2; stroke: #202f4e; stroke-width: 8; }
+    .x { fill: #F25C5C; stroke: #202f4e; stroke-width: 8; }
+  </style>
+  <text x="40%" y="60%" text-anchor="middle" dominant-baseline="middle" font-size="80" class="main three">3</text>
+  <text x="70%" y="60%" text-anchor="middle" dominant-baseline="middle" font-size="80" class="main x">x</text>
+</svg>

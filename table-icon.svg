@@ -1,0 +1,20 @@
+<svg viewBox="0 0 165 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100%">
+  <style>
+    .line { stroke: #202f4e; stroke-width: 8; stroke-linecap: round; }
+    .dot { stroke: #202f4e; stroke-width: 8; }
+    .bar { stroke: #202f4e; stroke-width: 8; rx: 5; ry: 5; }
+  </style>
+
+  <!-- Row 1 -->
+  <circle class="dot" cx="32" cy="32" r="24" fill="#4BA3F2"/>
+  <rect class="bar" x="64" y="16" width="96" height="32" fill="#4BA3F2"/>
+
+  <!-- Row 2 -->
+  <circle class="dot" cx="32" cy="80" r="24" fill="#8CD65E"/>
+  <rect class="bar" x="64" y="64" width="96" height="32" fill="#8CD65E"/>
+
+
+  <!-- Row 3 -->
+  <circle class="dot" cx="32" cy="128" r="24" fill="#F2B84B"/>
+  <rect class="bar" x="64" y="112" width="96" height="32" fill="#F2B84B"/>
+</svg>

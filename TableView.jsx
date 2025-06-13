@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchChicagoTime } from './fetchChicagoTime';
 import { s3Client } from './s3Client';
 import './TableView.css';
+import tripleCaptainIcon from './triple-captain-icon.svg';
 
 const TableView = () => {
   const [data, setData] = useState([]);
@@ -55,7 +56,11 @@ const TableView = () => {
                   <td className="tableview-td">{row.entry_history?.points}</td>
                   <td className="tableview-td">{row.entry_history?.event_transfers_cost}</td>
                   <td className="tableview-td">{row.entry_history ? row.entry_history.points - row.entry_history.event_transfers_cost : ''}</td>
-                  <td className="tableview-td">{row.active_chip || ''}</td>
+                  <td className="tableview-td">
+                    {row.active_chip === 'triple_captain' ? (
+                      <img src={tripleCaptainIcon} alt="Triple Captain" style={{ height: 32, width: 32, display: 'inline-block', verticalAlign: 'middle' }} />
+                    ) : (row.active_chip || '')}
+                  </td>
                 </tr>
               ))}
             </tbody>
