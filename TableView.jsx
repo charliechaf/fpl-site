@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { fetchChicagoTime } from './fetchChicagoTime';
 
 const tableStyles = {
   width: '100%',
+  minWidth: 0,
   borderCollapse: 'separate',
   borderSpacing: 0,
   background: '#fff',
@@ -40,7 +42,7 @@ const TableView = () => {
   const [chicagoTime, setChicagoTime] = useState('');
 
   useEffect(() => {
-    fetch('/fpl-site/data.json')
+    fetch('https://fpl-site-2025.s3.us-east-1.amazonaws.com/fake-fpl-data.json')
       .then((res) => res.json())
       .then((json) => {
         setData(json);
@@ -52,12 +54,7 @@ const TableView = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://worldtimeapi.org/api/timezone/America/Chicago')
-      .then((res) => res.json())
-      .then((json) => {
-        setChicagoTime(json.datetime ? new Date(json.datetime).toLocaleString('en-US', { timeZone: 'America/Chicago' }) : '');
-      })
-      .catch(() => setChicagoTime('Error fetching time'));
+    fetchChicagoTime().then(setChicagoTime);
   }, []);
 
   if (loading) return <div>Loading...</div>;
@@ -70,10 +67,29 @@ const TableView = () => {
   });
 
   return (
-    <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, boxSizing: 'border-box', width: '100%', overflowX: 'auto' }}>
-      <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 24 }}>Gameweek: {event}</h2>
-      <div style={{ marginBottom: 16, fontSize: 16, color: '#555' }}>Chicago Time: {chicagoTime}</div>
-      <div style={{ width: '100%', overflowX: 'auto' }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: '#f7f7f9',
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 700,
+          margin: '0 auto',
+          padding: '24px 8px',
+          boxSizing: 'border-box',
+        }}
+      >
+        <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 24, textAlign: 'center' }}>Gameweek: {event}</h2>
+        <div style={{ marginBottom: 16, fontSize: 16, color: '#555', textAlign: 'center' }}>Chicago Time: {chicagoTime}</div>
         <table style={tableStyles}>
           <thead>
             <tr>
