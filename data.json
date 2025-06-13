@@ -1,0 +1,73 @@
+[{
+    "active_chip": null,
+    "automatic_subs": [],
+    "entry_history": {
+        "event": 38,
+        "points": 45,
+        "total_points": 2206,
+        "rank": 5858999,
+        "rank_sort": 5968458,
+        "overall_rank": 2759379,
+        "percentile_rank": 55,
+        "bank": 0,
+        "value": 1001,
+        "event_transfers": 0,
+        "event_transfers_cost": 0,
+        "points_on_bench": 5
+    }
+}, 
+{
+    "active_chip": "triple_captain",
+    "automatic_subs": [],
+    "entry_history": {
+        "event": 38,
+        "points": 49,
+        "total_points": 2206,
+        "rank": 5858999,
+        "rank_sort": 5968458,
+        "overall_rank": 2759379,
+        "percentile_rank": 55,
+        "bank": 0,
+        "value": 1001,
+        "event_transfers": 0,
+        "event_transfers_cost": 4,
+        "points_on_bench": 5
+    }
+},
+{
+    "active_chip": "triple_captain",
+    "automatic_subs": [],
+    "entry_history": {
+        "event": 38,
+        "points": 49,
+        "total_points": 2206,
+        "rank": 5858999,
+        "rank_sort": 5968458,
+        "overall_rank": 2759379,
+        "percentile_rank": 55,
+        "bank": 0,
+        "value": 1001,
+        "event_transfers": 0,
+        "event_transfers_cost": 4,
+        "points_on_bench": 5
+    }
+}, 
+{
+    "active_chip": "wildcard",
+    "automatic_subs": [],
+    "entry_history": {
+        "event": 38,
+        "points": 49,
+        "total_points": 2206,
+        "rank": 5858999,
+        "rank_sort": 5968458,
+        "overall_rank": 2759379,
+        "percentile_rank": 55,
+        "bank": 0,
+        "value": 1001,
+        "event_transfers": 0,
+        "event_transfers_cost": 0,
+        "points_on_bench": 5
+    }
+}
+]
