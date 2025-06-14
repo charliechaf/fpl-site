@@ -21,10 +21,13 @@
 }
 
 .tableview-title {
+    color: #222;
   font-weight: 700;
   font-size: 24px;
   margin-bottom: 24px;
   text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 .tableview-time {
