@@ -40,3 +40,22 @@ tasks.named("browserDevelopmentRun") {
         println("Starting development server on http://localhost:3000")
     }
 }
+
+// Create a task to prepare distribution files for GitHub Pages
+tasks.register<Copy>("prepareDist") {
+    dependsOn("browserProductionWebpack")
+    
+    // Copy production JS bundle
+    from("build/kotlin-webpack/js/productionExecutable") {
+        include("*.js", "*.js.map")
+    }
+    
+    // Copy static resources (HTML, CSS, assets)  
+    from("build/processedResources/js/main")
+    
+    into("build/distributions")
+}
+
+tasks.named("browserProductionWebpack") {
+    finalizedBy("prepareDist")
+}
