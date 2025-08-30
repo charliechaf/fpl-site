@@ -38,7 +38,8 @@ val TableView = FC<TableViewProps> { _ ->
 
     if (loading) {
         div {
-            +"Loading..."
+            className = "loading".asDynamic()
+            +"Loading FPL data..."
         }
         return@FC
     }

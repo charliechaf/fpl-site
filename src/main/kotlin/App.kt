@@ -1,48 +1,26 @@
 import react.*
 import react.dom.html.ReactHTML.div
-import react.dom.html.ReactHTML.button
-import react.dom.html.ReactHTML.img
+import react.dom.html.ReactHTML.header
+import react.dom.html.ReactHTML.h1
+import react.dom.html.ReactHTML.main
 
 external interface AppProps : Props
 
 val App = FC<AppProps> { _ ->
-    var tab by useState("table")
-
     div {
-        className = "app-container".asDynamic()
+        className = "app".asDynamic()
         
-        div {
-            style = js("{minHeight: 'calc(100vh - 56px)'}")
-            
-            when (tab) {
-                "table" -> TableView()
-                else -> StatsView()
+        header {
+            className = "app-header".asDynamic()
+            h1 {
+                className = "app-title".asDynamic()
+                +"FPL Leaderboard"
             }
         }
         
-        div {
-            className = "bottom-tabs".asDynamic()
-            
-            button {
-                className = (if (tab == "table") "tab-btn active" else "tab-btn").asDynamic()
-                onClick = { _ ->
-                    tab = "table"
-                }
-                
-                img {
-                    src = "./table-icon.svg"
-                    alt = "Table"
-                    className = "tab-icon".asDynamic()
-                }
-            }
-            
-            button {
-                className = (if (tab == "stats") "tab-btn active" else "tab-btn").asDynamic()
-                onClick = { _ ->
-                    tab = "stats"
-                }
-                +"Stats"
-            }
+        main {
+            className = "app-main".asDynamic()
+            TableView()
         }
     }
 }
